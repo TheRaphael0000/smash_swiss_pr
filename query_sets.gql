@@ -1,0 +1,27 @@
+query Sets {
+  event(id: $id) {
+    sets(page: $page, perPage: 50) {
+      pageInfo {
+          totalPages
+      }
+      nodes {
+        id
+        winnerId
+        completedAt
+        slots {
+          entrant {
+            id
+            participants {
+              player {
+                id
+                user {
+                  slug
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
